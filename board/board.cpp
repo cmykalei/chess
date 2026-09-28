@@ -57,15 +57,16 @@ void board_print(void) {
         } else {
             printf(" %d ", row);
             for (int col = 1; col <= 8; col++) {
-                square_shade shade = board[row][col].square.shade;
-                const char* sym = piece_symbol(board[row][col].piece);
+                //square_shade shade = board[row][col].square.shade;
+                const char* sym = piece_char(board[row][col].piece);
                 const char* fg = (board[row][col].piece.color == BLACK) ? COLOR_WHITE_FG : COLOR_BLACK_FG;
-                if (!sym) sym = " ";
-                if (shade == LIGHT) {
+                printf("%s %s %s", fg, sym, COLOR_RESET);
+                //if (!sym) sym = " ";
+/*                if (shade == LIGHT) {
                     printf("%s%s %s %s", COLOR_LIGHT_BG, fg, sym, COLOR_RESET);
                 } else {
                     printf("%s%s %s %s", COLOR_DARK_BG, fg, sym, COLOR_RESET);
-                }
+                }*/
             }
         }
         printf("\n");

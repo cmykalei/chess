@@ -25,6 +25,8 @@ typedef struct piece_t {
 
 piece_t piece_init(piece_role role, piece_color color);
 
+const char* piece_char(piece_t p);
+
 const char* piece_symbol(piece_t p);
 
 #endif /* PIECE_H */
